@@ -1,0 +1,16 @@
+/things:
+  get:
+    summary: "Find things"
+    description: "Returns a list of things"
+    operationId: "v1/things/listThings"
+    produces:
+    - "application/json"
+    responses:
+      200:
+        description: "success"
+        schema:
+          $ref: "#/definitions/ArrayOfThings"
+    security:
+    - slack:
+      - "identity.basic"
+      - "identity.email"
